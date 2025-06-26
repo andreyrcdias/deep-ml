@@ -10,6 +10,16 @@ def transpose_matrix(a: list[list[int | float]]) -> list[list[int | float]]:
     return b
 
 
+def transpose_matrix_v2(a: list[list[int | float]]) -> list[list[int | float]]:
+    return [list(col) for col in zip(*a)]
+
+
+def transpose_matrix_v3(a: list[list[int | float]]) -> list[list[int | float]]:
+    import numpy as np
+    a_np = np.array(a)
+    return np.transpose(a_np).tolist()
+
+
 @pytest.mark.parametrize(
     "a, expected",
     [
