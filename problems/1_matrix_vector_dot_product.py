@@ -4,7 +4,7 @@ import pytest
 def matrix_dot_vector(a: list[list[int | float]], b: list[int | float]) -> list[int | float]:
     if len(a[0]) != len(b):
         return -1
-    result: list[int] = []
+    result = []
     for row_a in a:
         dot_product = sum(row_a[i] * b[i] for i in range(len(b)))
         result.append(dot_product)
