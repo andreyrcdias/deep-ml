@@ -4,4 +4,4 @@ __pycache__
 .ruff_cache
 .coverage
 .python-version
-
+.DS_Store
