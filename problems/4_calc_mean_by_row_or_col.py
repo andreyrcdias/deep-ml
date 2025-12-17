@@ -3,14 +3,14 @@ import pytest
 
 
 def calculate_matrix_mean(matrix: list[list[float]], mode: str) -> list[float]:
+    if mode not in ("column", "row"):
+        raise ValueError("mode must be `row` or `column`")
     arr = np.array(matrix, dtype=float)
-
-    if mode == "column":
-        return arr.mean(axis=0).tolist()
-    if mode == "row":
-        return arr.mean(axis=1).tolist()
-
-    raise ValueError("mode must be `row` or `column`")
+    axis = {
+        "column": 0,
+        "row": 1,
+    }
+    return arr.mean(axis=axis[mode]).tolist()
 
 
 @pytest.mark.parametrize(
