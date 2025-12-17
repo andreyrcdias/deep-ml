@@ -16,6 +16,7 @@ def transpose_matrix_v2(a: list[list[int | float]]) -> list[list[int | float]]:
 
 def transpose_matrix_v3(a: list[list[int | float]]) -> list[list[int | float]]:
     import numpy as np
+
     a_np = np.array(a)
     return np.transpose(a_np).tolist()
 
