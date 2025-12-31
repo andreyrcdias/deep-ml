@@ -5,6 +5,15 @@ import pytest
 
 
 def normal_pdf(x, mean, std_dev):
+    """
+    f(x) = (1 / (σ √(2π))) · exp(−(x − μ)² / (2 σ²))
+
+    Where:
+    μ       is the mean,
+    σ > 0   is the standard deviation,
+    exp     is the exponential function.
+    """
+
     coeff = 1.0 / (std_dev * math.sqrt(2 * math.pi))
     exp = -0.5 * ((x - mean) / std_dev) ** 2
     val = coeff * math.exp(exp)
